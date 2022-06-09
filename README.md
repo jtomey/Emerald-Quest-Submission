@@ -11,3 +11,10 @@ New guy sign up test.
 
 >>Explain the difference between a script and a transaction.
 >>>I believe a script can be used to view infomration on a block chain and a transaction adds, changes or edits information on the blockchain.  
+
+>Chapter 1 Day 2
+>>What are the 5 Cadence Programming Language Pillars?
+>>> The 5 Pillars are 1) Security 2) Clarity, 3) Approachability, 4) Developer Experience, 5) Resource Oriented Programming
+
+>>In your opinion, even without knowing anything about the Blockchain or coding, why could the 5 Pillars be useful (you don't have to answer this for #5)?
+>>> From the history it seem to address some issued discovered on Etheruem.  Improving security seems core, the others seem to address the usability characteristics required for wide spread developer adoption.  
