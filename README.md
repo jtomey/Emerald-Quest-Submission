@@ -63,7 +63,7 @@ pub fun main() {
     Add a script that reads myNumber from the contract
 
     Add a transaction that takes in a parameter named myNewNumber and passes it into the updateMyNumber function. Verify that your number changed by running the script again.
-\\\cadence
+```cadence
 pub contract HelloWorld {
 
     pub var greeting: String
@@ -82,17 +82,16 @@ pub contract HelloWorld {
         self.myNumber = 0
     }
 }
-\\\
+```
 
-\\\Script
+```cadence
 import HelloWorld from 0x01
 
 pub fun main(): Int {
     return HelloWorld.myNumber
 }
-\\\
-
-\\\New Transaction
+```
+```cadence
 import HelloWorld from 0x01
 
 transaction(mynewNumber: Int) {
@@ -103,4 +102,4 @@ transaction(mynewNumber: Int) {
     HelloWorld.changemyNumber(newmyNumber: mynewNumber)
   }
 }
-\\\
+```
