@@ -43,3 +43,64 @@ import JacobTucker from 0x03
 pub fun main() {
     log(JacobTucker.hello())
 }
+
+>Chapter 2 Day 2
+>>    Explain why we wouldn't call changeGreeting in a script.
+>>>   I believe changeGreeting is acting as a function that changes NewGreeting. Im not sure a value would get returned.     
+
+>>   What does the AuthAccount mean in the prepare phase of the transaction?
+>>>  AuthAccount is the users ID credentials to the Account on the Flow blockchain.  
+
+>>   What is the difference between the prepare phase and the execute phase in the transaction?
+>>>  The prepare phase is to call information from the account.  The Execute phase can perform functions and change 
+
+>>  This is the hardest quest so far, so if it takes you some time, do not worry! I can help you in the Discord if you have questions.
+
+    Add two new things inside your contract:
+        A variable named myNumber that has type Int (set it to 0 when the contract is deployed)
+        A function named updateMyNumber that takes in a new number named newNumber as a parameter that has type Int and updates myNumber to be newNumber
+
+    Add a script that reads myNumber from the contract
+
+    Add a transaction that takes in a parameter named myNewNumber and passes it into the updateMyNumber function. Verify that your number changed by running the script again.
+\\\cadence
+pub contract HelloWorld {
+
+    pub var greeting: String
+
+    pub fun changeGreeting(newGreeting: String) {
+        self.greeting = newGreeting
+    }
+    pub var myNumber: Int
+    
+    pub fun changemyNumber(newmyNumber: Int) {
+        self.myNumber = newmyNumber
+    }
+
+    init() {
+        self.greeting = "Hello, World!"
+        self.myNumber = 0
+    }
+}
+\\\
+
+\\\Script
+import HelloWorld from 0x01
+
+pub fun main(): Int {
+    return HelloWorld.myNumber
+}
+\\\
+
+\\\New Transaction
+import HelloWorld from 0x01
+
+transaction(mynewNumber: Int) {
+
+  prepare(signer: AuthAccount) {}
+
+  execute {
+    HelloWorld.changemyNumber(newmyNumber: mynewNumber)
+  }
+}
+\\\
