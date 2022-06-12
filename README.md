@@ -18,3 +18,28 @@ New guy sign up test.
 
 >>In your opinion, even without knowing anything about the Blockchain or coding, why could the 5 Pillars be useful (you don't have to answer this for #5)?
 >>> From the history it seem to address some issued discovered on Etheruem.  Improving security seems core, the others seem to address the usability characteristics required for wide spread developer adoption.  
+
+>Chapter 2 Day 1
+>Completed the exercise in the playground, but not sure how to share the file/export. How is it best to share? 
+>Here is what it looked like.  
+
+pub contract JacobTucker {
+ 
+  pub let is: String
+
+  init() {
+      self.is = "the best"
+  }
+
+  pub fun hello(): String {
+      return self.is
+  }
+}
+
+// Script1.cdc
+
+import JacobTucker from 0x03
+
+pub fun main() {
+    log(JacobTucker.hello())
+}
