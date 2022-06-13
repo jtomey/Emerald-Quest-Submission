@@ -104,8 +104,8 @@ transaction(mynewNumber: Int) {
 }
 ```
 
-<Chapter 2 Day 3
-<<1. In a script, initialize an array (that has length == 3) of your favourite people, represented as Strings, and log it.
+>Chapter 2 Day 3
+>>1. In a script, initialize an array (that has length == 3) of your favourite people, represented as Strings, and log it.
 ```cadence
 pub contract ADS {
 
