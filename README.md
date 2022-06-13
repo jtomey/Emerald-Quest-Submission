@@ -103,3 +103,45 @@ transaction(mynewNumber: Int) {
   }
 }
 ```
+
+<Chapter 2 Day 3
+<<1. In a script, initialize an array (that has length == 3) of your favourite people, represented as Strings, and log it.
+```cadence
+pub contract ADS {
+
+    pub var allNames: [String] 
+    
+    pub fun addNames(name: String)    {
+        self.allNames.append(name)
+    }
+
+    init() {
+        self.allNames = ["Jeff", "Leah", "Willow"]
+    }
+}
+```
+```cadence
+import ADS from 0x01
+
+transaction (name: String) {
+
+  prepare(acct: AuthAccount) {}
+
+  execute {
+    ADS.addNames(name: name)
+  }
+}
+```
+```cadence
+import ADS from 0x01
+
+  pub fun main(): [String] {
+  return ADS.allNames
+
+  }
+```
+
+<<2. In a script, initialize a dictionary that maps the Strings Facebook, Instagram, Twitter, YouTube, Reddit, and LinkedIn to a UInt64 that represents the order in which you use them from most to least. For example, YouTube --> 1, Reddit --> 2, etc. If you've never used one before, map it to 0!
+
+```cadence
+
