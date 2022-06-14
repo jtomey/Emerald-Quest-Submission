@@ -145,3 +145,5 @@ import ADS from 0x01
 
 ```cadence
 
+> are question 1 & 2 in the same contract/playground? or are these independent?  
+Thanks!
