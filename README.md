@@ -165,16 +165,15 @@ pub contract ADS {
 
    
 }
-'''
+```
 
-'''cadence
+```cadence
 import ADS from 0x01
 
 pub fun main(): {UInt64 : String} {
   return ADS.luckySocial
   }
-  '''
-  
+```
   >>3.  Explain what the force unwrap operator !
   >>> You use a ! force unwrap operator when you are calling a function on an item that is in a dictionary defined within a struct.  It is required to do this to to avoide calling a function on a nil value...which would cause the program to fail.
   
