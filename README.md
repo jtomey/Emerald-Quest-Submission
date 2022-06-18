@@ -175,13 +175,13 @@ pub fun main(): {UInt64 : String} {
   }
 ```
   >>3.  Explain what the force unwrap operator !
-  >>> You use a ! force unwrap operator when you are calling a function on an item that is in a dictionary defined within a struct.  It is required to do this to to avoide calling a function on a nil value...which would cause the program to fail.
+    >>> You use a ! force unwrap operator when you are calling a function on an item that is in a dictionary defined within a struct.  It is required to do this to to avoide calling a function on a nil value...which would cause the program to fail.
   
   >>4.  
     What the error message means
     Why we're getting this error
     How to fix it
->>>This error means 'thing' must be defined within a struct.
->>>We're getting this error because 'thing' needs to be unwrapped first
->>>we'd fix it by putting in "!", {address : Stirng}!
+    >>>This error means 'thing' must be defined within a struct.
+    >>>We're getting this error because 'thing' needs to be unwrapped first
+    >>>we'd fix it by putting in "!", {address : String}!
 
