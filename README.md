@@ -181,7 +181,7 @@ pub fun main(): {UInt64 : String} {
     What the error message means
     Why we're getting this error
     How to fix it
-This error means 'thing' must be defined within a struct.
-We're getting this error because 'thing' needs to be unwrapped first
-we'd fix it by putting in "!", {address : Stirng}!
+>>>This error means 'thing' must be defined within a struct.
+>>>We're getting this error because 'thing' needs to be unwrapped first
+>>>we'd fix it by putting in "!", {address : Stirng}!
 
