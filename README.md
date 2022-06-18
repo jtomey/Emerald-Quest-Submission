@@ -144,6 +144,45 @@ import ADS from 0x01
 >>2. In a script, initialize a dictionary that maps the Strings Facebook, Instagram, Twitter, YouTube, Reddit, and LinkedIn to a UInt64 that represents the order in which you use them from most to least. For example, YouTube --> 1, Reddit --> 2, etc. If you've never used one before, map it to 0!
 
 ```cadence
+pub contract ADS {
 
-> are question 1 & 2 in the same contract/playground? or are these independent?  
-Thanks!
+    pub var allSocial: [String]
+
+    pub var luckySocial: {UInt64: String}
+
+    pub fun addSocial(social: String) {
+        self.allSocial.append(social)
+        }
+
+    
+    init() {
+        self.allSocial = ["Facebook", "Instagram", "Twitter", "YouTube", "Reddit", "LinkedIn"]    
+
+        self.luckySocial = {1: "Twitter", 2: "LinkedIn", 3: "YouTube", 4: "Reddit", 5: "Facebook", 6: "Instagram"}
+
+
+    }
+
+   
+}
+'''
+
+'''cadence
+import ADS from 0x01
+
+pub fun main(): {UInt64 : String} {
+  return ADS.luckySocial
+  }
+  '''
+  
+  >>3.  Explain what the force unwrap operator !
+  >>> You use a ! force unwrap operator when you are calling a function on an item that is in a dictionary defined within a struct.  It is required to do this to to avoide calling a function on a nil value...which would cause the program to fail.
+  
+  >>4.  
+    What the error message means
+    Why we're getting this error
+    How to fix it
+This error means 'thing' must be defined within a struct.
+We're getting this error because 'thing' needs to be unwrapped first
+we'd fix it by putting in "!", {address : Stirng}!
+
