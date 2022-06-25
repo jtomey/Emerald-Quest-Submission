@@ -189,8 +189,9 @@ pub fun main(): {UInt64 : String} {
 >>1. Deploy a new contract that has a Struct of your choosing inside of it (must be different than Profile).
 >>2. Create a dictionary or array that contains the Struct you defined.
 >>3. Create a function to add to that array/dictionary.
->>```cadence
->>pub contract Authentication {
+
+>>>```cadence
+    pub contract Authentication {
 
     pub var runner: {Address: Runner}
     
@@ -220,9 +221,10 @@ pub fun main(): {UInt64 : String} {
 
 }
 ```
+
 >> 4.  Add a transaction to call that function in step 3.
 
-```cadence
+>>>```cadence
 import Authentication from 0x01
 
 transaction(firstName: String, lastName: String, time: AnyStruct, account: Address) {
@@ -236,8 +238,9 @@ transaction(firstName: String, lastName: String, time: AnyStruct, account: Addre
 }
 ```
 
+
 >> 5.  Add a script to read the Struct you defined.
->> ```cadence
+>>>```cadence
 import Authentication from 0x01
 
 pub fun main(account: Address): Authentication.Runner {
