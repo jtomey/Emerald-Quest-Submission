@@ -185,3 +185,66 @@ pub fun main(): {UInt64 : String} {
     >>>We're getting this error because 'thing' needs to be unwrapped first
     >>>we'd fix it by putting in "!", {address : String}!
 
+>Chapter 2 Day 4
+>>1. Deploy a new contract that has a Struct of your choosing inside of it (must be different than Profile).
+>>2. Create a dictionary or array that contains the Struct you defined.
+>>3. Create a function to add to that array/dictionary.
+>>```cadence
+>>pub contract Authentication {
+
+    pub var runner: {Address: Runner}
+    
+    pub struct Runner {
+        pub let firstName: String
+        pub let lastName: String
+        pub let time: AnyStruct
+        pub let account: Address
+
+        
+        init(_firstName: String, _lastName: String, _time: AnyStruct, _account: Address) {
+            self.firstName = _firstName
+            self.lastName = _lastName
+            self.time = _time
+            self.account = _account
+        }
+    }
+
+    pub fun addRunner(firstName: String, lastName: String, time: AnyStruct, account: Address) {
+        let newRunner = Runner(_firstName: firstName, _lastName: lastName, _time: time, _account: account)
+        self.runner[account] = newRunner
+    }
+
+    init() {
+        self.runner = {}
+    }
+
+}
+```
+>> 4.  Add a transaction to call that function in step 3.
+
+```cadence
+import Authentication from 0x01
+
+transaction(firstName: String, lastName: String, time: AnyStruct, account: Address) {
+
+    prepare(signer: AuthAccount) {}
+
+    execute {
+        Authentication.addRunner(firstName: firstName, lastName: lastName, time: time, account: account)
+        log("We're done.")
+    }
+}
+```
+
+>> 5.  Add a script to read the Struct you defined.
+>> ```cadence
+import Authentication from 0x01
+
+pub fun main(account: Address): Authentication.Runner {
+    return Authentication.runner[account]!
+}
+```
+
+
+
+
